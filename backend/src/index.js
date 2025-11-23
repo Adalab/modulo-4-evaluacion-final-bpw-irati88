@@ -16,14 +16,6 @@ app.listen(port, () => {
 
 // Endpoints
 
-// Pasos para completar el endpoint:
-// 1. Poner el método
-// 2. Poner la ruta
-// 3. Coger de los parámetros los datos que voy a necesitar
-// 4. Crear la query
-// 5. Crear conexión y pasar la query
-// 6. Retornar los datos
-
 // COGER RECETAS
 app.get("/recipes", async (req, res) => {
     try {
@@ -92,6 +84,8 @@ app.put("/modify/:id", async (req, res) => {
         res.status(400).send("Algo ha ido mal");
     }
 });
+
+// ELIMINAR RECETA
 
 app.patch("/delete/:id", async (req, res) => {
     try {
