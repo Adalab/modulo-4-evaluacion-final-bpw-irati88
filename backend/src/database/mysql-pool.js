@@ -4,7 +4,7 @@ const getConnection = async () => {
     console.log(process.env);
     const connection = await mysql.createConnection({
         host: "localhost",
-        database: "recipesapp",
+        database: "users",
         user: process.env.USER_WORKBENCH,
         password: process.env.PASSWORD_WORKBENCH,
     });

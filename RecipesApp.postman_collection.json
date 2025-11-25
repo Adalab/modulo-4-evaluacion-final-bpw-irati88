@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "dcb7ad3a-d8eb-4c19-b0c5-5b48569fb416",
+		"name": "RecipesApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50055545",
+		"_collection_link": "https://irati-a88-8426242.postman.co/workspace/Ira-Infligida's-Workspace~37a2655f-0808-423a-8092-bb0965f687f2/collection/50055545-dcb7ad3a-d8eb-4c19-b0c5-5b48569fb416?action=share&source=collection_link&creator=50055545"
+	},
+	"item": [
+		{
+			"name": "GET /recipes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/recipes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /recipe",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Berenjenas rellenas de champis\",\r\n    \"ingredients\": \"2 berenjenas, 1 cebolla, 1 pimiento verde, 1 bandeja de champiñones, Queso rallado, Aceite de oliva, Sal y pimienta\",\r\n    \"instructions\": \"1. Comenzamos abriendo las berenjenas a lo largo y haciendo unos cortes para que luego se pueda vaciar fácilmente.n/2. Ponemos un chorrito de aceite de oliva y las introducimos 20 minutos a 180º.n/3. Mientras tanto vamos a hacer un sofrito de cebolla y pimiento. Lo ponemos unos 20 minutos a fuego medio.n/4. Incorporamos los champiñones cortado en brunoise, esto es en cuadradito pequeño para que luego se pueda rellenar bien la berenjenas.n/5.Subimos el fuego y cocinamos todas las verduras durante unos 10 minutos dando vueltas todo el rato ya que el champiñón suelta mucha agua.n/6. Sacamos las berenjenas del horno y las vaciamos con la ayuda de una cucharada con mucho cuidado. Podemos añadir la carne de las berenjenas a los champiñones y cocinamos un par de minutos más.n/7. Cuando el arroz esté al dente y con textura cremosa retiramos del fuego.n/8. Rellenamos con las verduras las berenjenas y cubrimos de queso rallado. Metemos a gratinar al horno durante 5 minutos.n/9. Reposamos unos minutos y servimos caliente ya que es un plato sano y delicioso.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/recipe",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /recipe/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/recipe/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipe",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /recipe/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Risotto de boletus (modificada)\",\r\n    \"ingredients\": \"320g de arroz arborio, 300g de boletus, 1 cebolla mediana, 1 diente de ajo, 100ml de vino blanco, 1 litro de caldo de verduras, 40g de mantequilla, 40g de queso parmesano rallado, 3 cucharadas de aceite de oliva virgen extra, Sal y pimienta\",\r\n    \"instructions\": \"1. Picamos fina la cebolla y el ajo, calentamos 3 cucharadas de aceite de oliva y sofreímos la cebolla a fuego medio.n/2. Añadimos los boletus troceados y los salteamos unos minutos hasta que suelten su aroma.n/3. Vertemos 100ml de vino blanco y dejamos que evapore.n/4. Incorporamos los 320g de arroz y lo rehogamos 1-2 minutos.n/5.Vamos añadiendo el caldo caliente (aproximadamente 1 litro).n/6. Cuando el arroz haya absorbido el líquido, añadimos otro litro.n/7. Cuando el arroz esté al dente y con textura cremosa, retiramos del fuego.n/8. Añadimos los 40g de mantequilla y de parmesano rallado.n/9. Mezclamos bien para que quede brillante y cremoso.n/10. Echamos sal y pimienta al gusto, lo tapamos y dejamos reposar 2 minutos antes de servir.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/recipe/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipe",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH /recipe/:id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/recipe/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipe",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
