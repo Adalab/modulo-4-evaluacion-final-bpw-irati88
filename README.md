@@ -33,9 +33,9 @@ PASSWORD_WORKBENCH=tuPassword
 
 Ejecuta en MySQL Workbench:
 
-CREATE DATABASE recipessapp;
+CREATE DATABASE recipesapp;
 
-USE recipessapp;
+USE recipesapp;
 
 CREATE TABLE recipes (
     id INT PRIMARY KEY AUTO_INCREMENT,

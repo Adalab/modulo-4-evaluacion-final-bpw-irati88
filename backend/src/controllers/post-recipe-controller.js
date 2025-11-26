@@ -3,6 +3,7 @@ const mysql = require("../database/mysql-pool");
 const postRecipeController = async (req, res) => {
   try {
     const { name, ingredients, instructions } = req.body;
+    const { id_user } = req.user;
 
     // Tengo que validar que los campos sean correctos
     if (!name || !ingredients || !instructions) {
@@ -17,14 +18,14 @@ const postRecipeController = async (req, res) => {
       return "Los campos deben ser texto";
     }
     const query =
-      "INSERT INTO recipes (name, ingredients, instructions) VALUES (?, ?, ?)";
+      "INSERT INTO recipes (name, ingredients, instructions, fk_user) VALUES (?, ?, ?, ?)";
 
     const connection = await mysql.getConnection();
-    await connection.query(query, [name, ingredients, instructions]);
+    await connection.query(query, [name, ingredients, instructions, id_user]);
 
     res.send("Receta creada");
-  } catch {
-    res.send("Algo ha ido mal");
+  } catch (error) {
+    res.status(500).send("Algo ha salido mal");
   }
 };
 

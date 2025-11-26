@@ -2,11 +2,11 @@ const mysql = require("../database/mysql-pool");
 
 const putRecipeIdController = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id_user } = req.params;
     const { name, ingredients, instructions } = req.body;
 
     // Tengo que validar que los campos sean correctos
-    if (isNaN(Number(id))) {
+    if (isNaN(Number(id_user))) {
       return res.status(400).send("ID inválido");
     }
 
@@ -26,11 +26,11 @@ const putRecipeIdController = async (req, res) => {
       "UPDATE recipes SET name = ?, ingredients = ?, instructions = ? WHERE id_recipe = ?";
 
     const connection = await mysql.getConnection();
-    await connection.query(query, [name, ingredients, instructions, id]);
+    await connection.query(query, [name, ingredients, instructions, id_user]);
 
     res.send("Receta actualizada");
-  } catch {
-    res.send("Algo ha ido mal");
+  } catch (error) {
+    res.status(500).send("Algo ha salido mal");
   }
 };
 

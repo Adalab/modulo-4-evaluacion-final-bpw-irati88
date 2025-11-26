@@ -1,6 +1,6 @@
+const bcrypt = require("bcrypt");
 const mysql = require("../database/mysql-pool");
 const { generateToken } = require("../utils/jwt");
-const bcrypt = require("bcrypt");
 
 const postSignupController = async (req, res) => {
   try {
@@ -14,7 +14,7 @@ const postSignupController = async (req, res) => {
     const connection = await mysql.getConnection();
 
     // Comprobamos si el email ya está registrado
-    const checkQuery = "SELECT * FROM user WHERE email = ?";
+    const checkQuery = "SELECT * FROM users WHERE email = ?";
     const [existingUser] = await connection.query(checkQuery, [email]);
 
     if (existingUser.length > 0) {
@@ -23,7 +23,7 @@ const postSignupController = async (req, res) => {
 
     const passwordHash = await bcrypt.hash(password, 10);
 
-    const query = "INSERT INTO user (name, email, password) VALUES (?, ?, ?)";
+    const query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
     const data = await connection.query(query, [name, email, passwordHash]);
 
     const token = generateToken({
@@ -32,7 +32,7 @@ const postSignupController = async (req, res) => {
 
     res.json({ token, name, id_user: data[0].insertId });
   } catch (error) {
-    res.send("Algo ha salido mal");
+    res.status(400).send("Algo ha salido mal");
   }
 };
 

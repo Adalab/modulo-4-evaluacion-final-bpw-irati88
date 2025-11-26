@@ -2,7 +2,6 @@ const bcrypt = require("bcrypt");
 const mysql = require("../database/mysql-pool");
 const { generateToken } = require("../utils/jwt");
 
-
 const postLoginController = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -14,13 +13,13 @@ const postLoginController = async (req, res) => {
 
     const connection = await mysql.getConnection();
 
-    const query = "SELECT * FROM user WHERE email = ?";
+    const query = "SELECT * FROM users WHERE email = ?";
     const [data] = await connection.query(query, [email]);
     const user = data[0];
 
     if (!user) {
       return res.status(401).json({
-        error: "Usuario inválido",
+        error: "Usuario no encontrado",
       });
     }
 
@@ -39,7 +38,7 @@ const postLoginController = async (req, res) => {
 
     res.json({ token, name: user.name, id_user: user.id_user });
   } catch (error) {
-    res.send("Algo ha salido mal");
+    res.status(500).json({ error: "Error al iniciar sesión" });
   }
 };
 

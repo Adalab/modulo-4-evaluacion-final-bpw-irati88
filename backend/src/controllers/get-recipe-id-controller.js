@@ -1,9 +1,8 @@
 const mysql = require("../database/mysql-pool");
 
-const getRecipeIdController =
-async (req, res) => {
+const getRecipeIdController = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id_user } = req.params;
 
     // Validamos que la ID escogida sea correcta
     if (isNaN(Number(id))) {
@@ -14,14 +13,14 @@ async (req, res) => {
       "SELECT * FROM recipes WHERE id_recipe = ? AND deleted_at IS NULL";
 
     const connection = await mysql.getConnection();
-    const data = await connection.query(query, [id]);
+    const data = await connection.query(query, [id_user]);
 
     res.json(data[0]);
-  } catch {
-    res.send("Algo ha ido mal");
+  } catch (error) {
+    res.status(500).send("Algo ha salido mal");
   }
 };
 
 module.exports = {
   getRecipeIdController,
-}
+};
