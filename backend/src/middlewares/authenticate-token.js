@@ -13,7 +13,6 @@ const authenticateToken = (req, res, next) => {
     return res.status(401).json({ error: "Token inválido" });
   }
 
-  // Adjuntamos a la req el objeto decodificado
   req.user = decoded;
   next();
 };

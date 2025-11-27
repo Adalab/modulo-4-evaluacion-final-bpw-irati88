@@ -14,7 +14,13 @@
 					"type": "noauth"
 				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQyMzkzMzMsImV4cCI6MTc2NDI0MjkzM30.Oj2SRrZ6Qw9cho6y8TDfaS-EWZhkgEV8jVNVwRxo54Y",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"name\": \"Hecate3\",\r\n    \"email\": \"hecate@gmail.com\",\r\n    \"password\": \"HeCaTe\"\r\n}",
@@ -71,13 +77,13 @@
 			"name": "GET /recipes",
 			"request": {
 				"auth": {
-					"type": "basic"
+					"type": "noauth"
 				},
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQxODQxMjQsImV4cCI6MTc2NDE4NzcyNH0.aAsuvGOqsu3cJgO131IXFN3Ly4qbptqXQb_uEhyggcw",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQyNDEyMjEsImV4cCI6MTc2NDI0NDgyMX0.iZZI8UZDfnLvQcINP8eeInNDDMXliRdUB5NGfdovWwc",
 						"type": "text"
 					}
 				],
@@ -111,7 +117,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQxODQxMjQsImV4cCI6MTc2NDE4NzcyNH0.aAsuvGOqsu3cJgO131IXFN3Ly4qbptqXQb_uEhyggcw",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQyMzkzMzMsImV4cCI6MTc2NDI0MjkzM30.Oj2SRrZ6Qw9cho6y8TDfaS-EWZhkgEV8jVNVwRxo54Y",
 						"type": "text"
 					}
 				],
@@ -147,7 +153,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQxODQxMjQsImV4cCI6MTc2NDE4NzcyNH0.aAsuvGOqsu3cJgO131IXFN3Ly4qbptqXQb_uEhyggcw",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQyMzkzMzMsImV4cCI6MTc2NDI0MjkzM30.Oj2SRrZ6Qw9cho6y8TDfaS-EWZhkgEV8jVNVwRxo54Y",
 						"type": "text"
 					}
 				],
@@ -175,7 +181,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQxODQxMjQsImV4cCI6MTc2NDE4NzcyNH0.aAsuvGOqsu3cJgO131IXFN3Ly4qbptqXQb_uEhyggcw",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJpYXQiOjE3NjQyMzkzMzMsImV4cCI6MTc2NDI0MjkzM30.Oj2SRrZ6Qw9cho6y8TDfaS-EWZhkgEV8jVNVwRxo54Y",
 						"type": "text"
 					}
 				],
